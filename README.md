@@ -1,1 +1,1 @@
-# JS-Data-Structures
+# JS Related Information
