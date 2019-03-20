@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>the5fire-backbone-model</title>
+</head>
+<body>
+</body>
+<script src="http://the5fireblog.b0.upaiyun.com/staticfile/jquery-1.10.2.js"></script>
+<script src="http://the5fireblog.b0.upaiyun.com/staticfile/underscore.js"></script>
+<script src="http://the5fireblog.b0.upaiyun.com/staticfile/backbone.js"></script>
+<script>
+    (function ($) {
+        var Man = Backbone.Model.extend({
+            initialize: function(){
+                alert('Hey, you create me!');
+            },
+            // default:{                     //直接定义，设置默认值,只是实现了Backbone的defaults这个方法，或者是给defaults进行了赋值。
+            //     name:'leeyowon',
+            //     age:'18'
+            // }
+        });
+        var man = new Man;
+        man.set({name:'leeyowon',age:'10'}); //赋值时定义
+        alert(man.get('name'));
+    })(jQuery);
+</script>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>圆</title>
+    <script src="../node_modules/echarts/dist/echarts.js"></script>
+</head>
+<body>
+<div id="main" style="width: 600px;height:400px;"></div>
+</body>
+<script>
+    // 绘制图表。
+    echarts.init(document.getElementById('main')).setOption({
+        series: {
+            type: 'pie',
+            data: [
+                {name: 'A', value: 1212},
+                {name: 'B', value: 2323},
+                {name: 'C', value: 1919}
+            ]
+        }
+    });
+</script>
+</html>
