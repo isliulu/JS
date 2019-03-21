@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--<img src="../CSS/img/yo.jpg" alt="李枖原" id="lee">-->
+
+<button>change color</button>
+<h1>i like leeyowon</h1>
+</body>
+
+<script>
+    // var lyw = document.getElementById('lee');
+
+    // document.onkeydown = function (event) {
+    //     var t = event.keyCode;
+    //     console.log(t);
+    //    console.log( '·'.charCodeAt());
+    //    console.log( '-'.charCodeAt());
+    // }
+
+    var btn = document.querySelector('button');
+    var h = document.querySelector('h1');
+
+    function random(number) {
+        return Math.floor(Math.random()*(number+1));
+    }
+
+    btn.onclick = function() {
+        var rndCol = 'rgb(' + random(255) + ',' + random(255) + ',' + random(255) + ')';
+        document.body.style.backgroundColor = rndCol;
+        document.body.h.style.color='yellow';
+    }
+
+</script>
+</html>

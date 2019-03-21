@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body onkeydown="show()">
+<p align="center" >请按键盘</p>
+</body>
+<script>
+    // window.onkeypress = function () {
+    //     if (event.keyCode == '49') {
+    //         alert('你输入了键盘的 “  ” 键');
+    //     }
+    // }
+
+    function show() {
+        alert("ASCII代码是：" + event.keyCode +"\n大写字符是：" + String.fromCharCode(event.keyCode));
+    }
+</script>
+</html>
