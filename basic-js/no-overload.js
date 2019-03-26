@@ -13,4 +13,4 @@ function doSum() {
     console.log('我是第二个定义的函数');
 }
 
-doSum();
+doSum(); //我是第二个定义的函数

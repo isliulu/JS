@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+<div id="app">
+    <input type="text" v-model="inputVal">
+    <button @click="handData(inputVal)">提交</button>
+    <button @click="removeData(item,index)">删除</button>
+    <ul>
+        <li v-for="(item,index) in list">{{item}}</li>
+    </ul>
+</div>
+</body>
+<script>
+    var app = new Vue({
+        el: '#app',
+        data: {
+            list: [],
+            inputVal: '',
+        },
+        methods: {
+            handData(val) {
+                this.list.push(val);
+            },
+            removeData(val, index) {
+                this.list.splice(index, 1);
+            }
+        }
+    });
+</script>
+</html>
