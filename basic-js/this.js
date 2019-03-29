@@ -2,9 +2,9 @@
  * created by Administrator on 2019-3-21
  */
 
-/**
- * created by Administrator on 2018-12-1
- */
+//this，函数执行的上下文，可以通过apply，call，bind改变this的指向。对于匿名函数或者直接调用的函数来说，
+// this指向全局上下文（浏览器为window，nodejs为global），剩下的函数调用，那就是谁调用它，this就指向谁。
+// 当然还有es6的箭头函数，箭头函数的指向取决于该箭头函数声明的位置，在哪里声明，this就指向哪里。
 
 // this 提供了一种更优雅的方式来隐式“传递”一个对象引用
 // this 并不像我们所想的那样指向函数本身。需要明确的是， this 在任何情况下都不指向函数的词法作用域。在 JavaScript 内部，作用
