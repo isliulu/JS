@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>全局组件</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+
+<div id="app">
+    <input type="text" v-model="inputVal">
+    <button @click="addVal">提交</button>
+    <ul>
+        <do-item v-for="item in list"
+                 :title="item">
+        </do-item>
+    </ul>
+</div>
+</body>
+<script>
+    Vue.component('doItem', {
+        props: ['title'],
+        template: '<li>{{ title }}</li>'
+    });
+
+    new Vue({
+        el: '#app',
+        data: {
+            inputVal: '',
+            list: []
+        },
+        methods: {
+            addVal: function () {
+                this.list.push(this.inputVal);
+                this.inputVal = '';
+            }
+        }
+    })
+</script>
+</html>

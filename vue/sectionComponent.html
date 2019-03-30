@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>局部组件</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+
+<div id="app">
+    <input type="text" v-model="inputVal">
+    <button @click="addVal">提交</button>
+    <ul>
+        <do-item v-for="(item,index) in list"
+                 :title="item"
+                 @delete="deleteVal(index)">
+        </do-item>
+    </ul>
+</div>
+</body>
+<script>
+
+    var doItem = {
+        props: ['title'],
+        template: '<li @click="removeVal">{{ title }}</li>',
+        methods: {
+            removeVal: function () {
+                this.$emit('delete');
+            }
+        }
+    };
+
+    new Vue({
+        el: '#app',
+        components: {
+            doItem: doItem
+        },
+        data: {
+            inputVal: '',
+            list: []
+        },
+        methods: {
+            addVal: function () {
+                this.list.push(this.inputVal);
+                this.inputVal = '';
+            },
+
+            deleteVal: function (index) {
+                this.list.splice(index, 1);
+            }
+        }
+    })
+</script>
+</html>
