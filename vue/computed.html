@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>计算属性</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+<div id="app">
+    {{fullName}}
+</div>
+</body>
+</html>
+<script>
+    //计算属性的结果会被缓存，除非依赖的响应式属性变化才会重新计算。
+
+    var vm = new Vue({
+        el: '#app',
+        data: {
+            firstName: 'Lu',
+            lastName: 'Liu'
+        },
+        computed: {
+            fullName: function () {
+                return this.firstName +' '+ this.lastName;
+            }
+        }
+    });
+</script>
