@@ -8,35 +8,35 @@
 
 
 //结果：a c e b
-console.log("a");
-setTimeout(() => {
-    console.log("b")
-});
-var promise = new Promise((resolve, reject) => {
-    console.log("c");
-});
-
-promise.then(() => {
-    console.log("d");
-});
-
-console.log("e");
-
-for (var i = 0; i < 5; i++) {
-    (function () {
-        setTimeout(function () {
-            console.log(i);
-        }, i * 1000);
-    })(i);
-}      //5 5 5 5 5
-
-for (let i = 0; i < 5; i++) {
-    (function () {
-        setTimeout(function () {
-            console.log(i);
-        }, i * 1000);
-    })(i);
-}      //0 1 2 3 4
+// console.log("a");
+// setTimeout(() => {
+//     console.log("b")
+// });
+// var promise = new Promise((resolve, reject) => {
+//     console.log("c");
+// });
+//
+// promise.then(() => {
+//     console.log("d");
+// });
+//
+// console.log("e");
+//
+// for (var i = 0; i < 5; i++) {
+//     (function () {
+//         setTimeout(function () {
+//             console.log(i);
+//         }, i * 1000);
+//     })(i);
+// }      //5 5 5 5 5
+//
+// for (let i = 0; i < 5; i++) {
+//     (function () {
+//         setTimeout(function () {
+//             console.log(i);
+//         }, i * 1000);
+//     })(i);
+// }      //0 1 2 3 4
 
 
 
@@ -77,15 +77,15 @@ for (let i = 0; i < 5; i++) {
 // 	ok，第一轮事件循环结束了，我们开始第二轮循环，当然要从宏任务Event Queue开始。我们发现了宏任务Event Queue中setTimeout对应的回调函数，立即执行。
 // 	结束。
 
-
+// 1  7  6  8  2  4  9  11  3  10  5 12
 console.log('1');
 
 setTimeout(function() {
     console.log('2');
 
-    // process.nextTick(function() {
-    //     console.log('3');
-    // });
+    process.nextTick(function() {
+        console.log('3');
+    });
 
     new Promise(function(resolve) {
         console.log('4');
@@ -96,9 +96,9 @@ setTimeout(function() {
 
 });
 
-// process.nextTick(function() {
-//     console.log('6');
-// });
+process.nextTick(function() {
+    console.log('6');
+});
 
 
 new Promise(function(resolve) {
@@ -111,9 +111,9 @@ new Promise(function(resolve) {
 setTimeout(function() {
     console.log('9');
 
-    // process.nextTick(function() {
-    //     console.log('10');
-    // });
+    process.nextTick(function() {
+        console.log('10');
+    });
 
     new Promise(function(resolve) {
         console.log('11');
