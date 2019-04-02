@@ -7,7 +7,7 @@
 </head>
 <body>
 <ul id="example-1">
-    <li v-for="item in items">
+    <li v-for="item in items"  :key="item.id">
         {{ item.message }}
     </li>
 </ul>
@@ -17,8 +17,11 @@
         el: '#example-1',
         data: {
             items: [
-                { message: 'Foo' },
-                { message: 'Bar' }
+                { id:1,message: 'Foo' },
+                { id:2,message: 'is' },
+                { id:3,message: 'very' },
+                { id:4,message: 'nice' },
+                { id:5,message: 'girl' },
             ]
         }
     })
