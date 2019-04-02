@@ -1,0 +1,30 @@
+**属性类型**
+ECMAScript中有两种属性：数据属性和访问器属性
+
+[[configurable]]:表示能否通过delete删除属性从而重新定义属性，能否修改属性的特点，默认为true.
+
+[[Enumerable]]:表示能否通过for-in循环返回属性，默认为true
+
+[[Writable]]:表示能否修改属性的值，默认为true
+
+[[Value]]:包含这个属性的数据值。读取属性的时，从这个位置读；写入属性值时，把新值保存在这个位置，默认值为undefined.
+
+要修改属性默认的特性，必须使用ECMAScript5中的Object.defineProperty()方法。
+
+这个方法接收三个参数：属性所在的对象，属性的名字，一个描述符对象。
+
+其中描述符对象的属性必须是:configurable   enumerable   writable   value;设置其中的一个或多个，可以修改对应的特性值。
+
+
+var person = {};
+
+Object.defineProperty(person, "name", {
+    configurable: false,
+    enumerable: false,
+    writable: false,
+    value: 'liulu'
+});
+
+person.name = 'leeyowon';
+delete person.name;
+console.log(person.name);  //liulu
