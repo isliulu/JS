@@ -22,6 +22,11 @@
 
     var doItem = {
         props: ['title'],
+        data:function(){           //一个组件的 data 选项必须是一个函数
+            return {
+
+            }
+        },
         template: '<li @click="removeVal">{{ title }}</li>',
         methods: {
             removeVal: function () {
