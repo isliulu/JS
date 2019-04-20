@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Video Demo1</title>
+</head>
+<body>
+<video src="https://bestvpn.org/html5demos/assets/dizzy.mp4"  controls  width="500px" height="300px"></video>
+<button onclick="fullScreen();">全屏</button>
+
+</body>
+</html>
+<script>
+    var video = document.getElementsByTagName('video')[0];
+    function fullScreen() {
+        video.webkitEnterFullScreen();
+    }
+</script>
