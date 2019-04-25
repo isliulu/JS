@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>grid--左边固定右边自适应</title>
+</head>
+<body>
+<div class="left">
+    我是左边-固定
+</div>
+<div class="right">
+    我是右边
+    我是右边
+    我是右边
+    ---自适应
+</div>
+</body>
+</html>
+<style>
+    html{
+        width: 100%;
+        height: 100%;
+    }
+    body{
+        width: 100%;
+        height: 100%;
+        display: grid;
+        grid-template-columns: 100px auto;
+    }
+    *{
+        padding: 0;
+        margin: 0;
+    }
+    .left{
+        background-color: #76DAFF;
+        height: 100%;
+    }
+    .right{
+        background-color: oldlace;
+        height: 100%;
+    }
+</style>
