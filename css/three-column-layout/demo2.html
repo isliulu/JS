@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>三列布局</title>
+</head>
+<body>
+
+<div id="parent">
+    <div id="left">左列定宽</div>
+    <div id="center">中间定宽</div>
+    <div id="right">右列自适应</div>
+</div>
+
+</body>
+</html>
+<style>
+    #parent{
+        min-width: 310px; /*100+10+200,防止宽度不够,子元素换行*/
+    }
+    #left {
+        float: left;
+        width: 100px;
+        height: 500px;
+        background-color: #f00;
+    }
+    #center{
+        float: left;
+        width: 200px;
+        height: 500px;
+        background-color: #eeff2b;
+    }
+    #right {
+        margin-left: 300px;  /*等于#left和#center的宽度之和*/
+        height: 500px;
+        background-color: #0f0;
+    }
+
+
+</style>
