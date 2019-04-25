@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>水平垂直居中=>绝对定位</title>
+</head>
+<body>
+<div class="box">
+
+</div>
+</body>
+</html>
+<style>
+   .box{
+       width: 100px;
+       height: 80px;
+       background-color: #ff2a00;
+       position: absolute;
+       top: 50%;
+       left: 50%;
+       /*定宽高时等同于margin-left:负自身宽度一半;margin-top:负自身高度一半;*/
+       transform: translate(-50%,-50%);
+   }
+</style>
