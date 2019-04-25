@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>grid--左边不定宽右边自适应</title>
+</head>
+<body>
+<div class="left">
+    我是左边-不定宽
+    我是左边-不定宽
+    我是左边-不定宽
+</div>
+<div class="right">
+    我是右边
+    我是右边
+    我是右边
+    ---自适应
+</div>
+</body>
+</html>
+<style>
+    html{
+        width: 100%;
+        height: 100%;
+    }
+    body{
+        width: 100%;
+        height: 100%;
+        display: grid;
+        grid-template-columns: auto 1fr;
+    }
+    *{
+        padding: 0;
+        margin: 0;
+    }
+    .left{
+        background-color: #76DAFF;
+        height: 100%;
+    }
+    .right{
+        background-color: oldlace;
+        height: 100%;
+    }
+</style>
