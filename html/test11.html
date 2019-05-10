@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>alert</title>
+</head>
+<style>
+    #modal {
+        position: fixed;
+        left: 40%;
+        top: 10%;
+        width: 320px;
+        height: 60px;
+        line-height: 60px;
+        background-color: #fbe1e3;
+        font-size: 16px;
+        text-align: center;
+        border-radius: 8px;
+        color: red;
+        display: none;
+    }
+
+    img{
+        position: fixed;
+        top: 10%;
+        left: 64%;
+        cursor: pointer;
+        width: 32px;
+        display: none;
+    }
+</style>
+<body>
+<button onclick="submit()"> 确定</button>
+<div id="modal"></div>
+<img src="../image/del.png" alt="" id="img" onclick="remove()">
+
+</body>
+<script>
+    let modal = document.getElementById('modal');
+    let img = document.getElementById('img');
+
+    window.alert = alert;
+
+    function alert(data) {
+        modal.style.display = 'block';
+        img.style.display = 'block';
+        modal.innerText = data;
+    }
+
+    function submit() {
+        alert('是对的！');
+    }
+
+    function remove() {
+        modal.style.display = 'none';
+        img.style.display = 'none';
+    }
+</script>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="file" id="file-input" onchange="fileChange(this)">
+<button onclick="submit()">确定</button>
+<button onclick="remove()">取消</button>
+</body>
+</html>
+<script>
+    let fileData = {
+        name: '',
+        size: ''
+    };
+
+    let fileXhr = new XMLHttpRequest();
+
+    function submit() {
+        fileXhr.open("post", "/file.psp", true);
+        fileXhr.setRequestHeader("content-type", "application/json,charset=UTF-8");
+        fileXhr.send(JSON.stringify(fileData));
+        console.log(fileData);
+    }
+
+    //
+    let file = document.getElementById('file-input');
+    file.onchange = function () {
+        let fileReader = new FileReader();
+        let fileType = this.files[0].type;
+        console.log(fileType);
+        fileReader.onload = function () {
+
+        };
+        fileData.name = this.files[0].name;
+        fileData.size = this.files[0].size;
+        // console.log(this.files[0], 2222222222222222);
+        // fileReader.readAsDataURL(this.files[0]);
+    };
+
+
+    fileXhr.onreadystatechange = function () {
+        if (fileXhr.readyState === 4) {
+            if (fileXhr.status >= 200 && fileXhr.status < 300) {
+                console.log(fileXhr.responseText);
+            } else {
+                console.log('error')
+            }
+        }
+    };
+
+
+    function remove() {
+        file.value='';
+        alert(file.value);
+    }
+</script>

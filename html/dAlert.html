@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    // window.alert = alert;
+    // let img = document.createElement("img");
+    let modal = document.createElement("div");
+    let btn = document.createElement("div");
+
+    function alertModal(data) {
+
+        let textNode = document.createTextNode(data ? data : '');
+        btn.innerText = 'X';
+        addClass(modal, {
+            "position": "fixed",
+            "left": "40%",
+            "top": "10%",
+            "width": "320px",
+            "height": "50px",
+            "line-height": "50px",
+            "background-color": "#fbe1e3",
+            "font-size": "16px",
+            "text-align": "center",
+            "border-radius": "8px",
+            "color": "red",
+        });
+
+        // addClass(img, {
+        //     "position": "fixed",
+        //     "left": "55%",
+        //     "top": "10%",
+        //     "cursor": "pointer",
+        //     "width": "32px",
+        // });
+
+        addClass(btn,{
+            "float": "right",
+            "margin": "10px",
+            "width": "20px",
+            "height": "20px",
+            "font-weight": "bold",
+            "line-height": "20px",
+            "cursor": "pointer",
+            "float": "right",
+            "color": "#ccc"
+        });
+
+        modal.appendChild(textNode);
+        modal.appendChild(btn);
+
+        document.getElementsByTagName("body")[0].appendChild(modal);
+        // document.getElementsByTagName("body")[0].appendChild(img);
+    }
+
+    function addClass(targetObj, cssObj) {
+
+        let str = targetObj.getAttribute("style") ? targetObj.getAttribute("style") : "";
+        // img.src = '../image/del.png';
+
+        for (let i in cssObj) {
+            if (cssObj.hasOwnProperty(i)) {
+                str += i + ":" + cssObj[i] + ";";
+            }
+
+        }
+        targetObj.style.cssText = str;
+
+    }
+
+    btn.onclick = function () {
+        modal.style.display = 'none';
+        // btn.style.display = 'none';
+    };
+    alertModal('李枖原 ');
+    //
+    if (modal) {
+        setTimeout(function () {
+            modal.style.display = 'none';
+        }, 10000);
+    }
+</script>
