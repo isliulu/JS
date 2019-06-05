@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div>
+    <form action="/login.psp" enctype="multipart/form-data" method="post">
+        <input type="file">
+        <input type="submit" value="上传" onclick="return submit(this.form)">
+    </form>
+</div>
+</body>
+</html>
+<script>
+    function submit(form) {
+        console.log(form.firstElementChild.files[0]);
+        if (form.firstElementChild.files[0].type !== 'application/x-gzip') {
+            alert('error');
+            return false;
+        } else {
+            return true;
+        }
+
+
+    }
+</script>

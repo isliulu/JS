@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form action="/uploadfile">
+    <input type="file">
+    <button onclick="submit()" id="sub">提交</button>
+</form>
+</body>
+</html>
+<script>
+    var btn=document.getElementById('sub');
+
+    btn.addEventListener('click',function () {
+        alert('ssss');
+    });
+    function submit() {
+        console.log(btn);
+        console.log(window.location);
+        console.log(window.location.pathname );
+    }
+</script>
