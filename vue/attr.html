@@ -17,11 +17,12 @@
         data:{
             message:'hello'
         },
-        computed:{
+        computed:{  //计算属性
             reverseMessage:function(){
                 return this.message.split('').reverse('').join('')
             }
         }
-    })
+    });
+    console.log(vm);
 </script>
 </html>

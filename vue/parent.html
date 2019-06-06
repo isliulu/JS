@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="vue.js"></script>
+</head>
+<body>
+<div id="app">
+    <child-item></child-item>
+</div>
+</body>
+</html>
+<script>
+    Vue.component('childItem',{
+        props:[],
+        template:"<li>我成功了</li>"
+    });
+
+    var vm = new Vue({
+        el:'#app',
+        data:{
+
+        }
+    });
+</script>

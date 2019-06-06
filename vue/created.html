@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="vue.js">
+
+    </script>
+</head>
+<body>
+<div id="app">
+
+</div>
+</body>
+</html>
+<script>
+    var vm = new Vue({
+        el:'#app',
+        data:{
+            a:1
+        },
+        methods:{
+
+        },
+        //在实例创建完成后被立即调用。在这一步，实例已完成以下的配置：数据观测 (data observer)，属性和方法的运算，watch/event 事件回调。
+        created:function () {
+            //'this'指向vm实例
+            console.log(this.el); //然而，挂载阶段还没开始，$el 属性目前不可见。
+            console.log('a is :'+this.a);
+        }
+    });
+</script>

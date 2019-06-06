@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="vue.js"></script>
+</head>
+<body>
+<div id="app">
+    <input type="text " v-model="content">
+    <p>{{content}}</p>
+    <!--用谷歌扩展的VUE调试器可以直观的体验双向绑定-->
+</div>
+</body>
+</html>
+<script>
+    var vm =new Vue({
+        el:'#app',
+        data:{
+            content:''
+        },
+        methods:{
+
+        }
+    });
+</script>

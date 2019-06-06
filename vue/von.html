@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="vue.js"></script>
+</head>
+<body >
+<div id="app">
+    <p>{{p1}}</p>
+    <p>{{p2}}</p>
+    <div>
+        <button @click="add()">相加</button>
+    </div>
+    <p>
+        {{sump}}
+    </p>
+
+    <br>
+    <p>{{s1}}</p>
+    <p>{{s2}}</p>
+    <div>
+        <button @click="remove()">相减</button>
+    </div>
+    <p>
+        {{sums}}
+    </p>
+
+</div>
+</body>
+</html>
+<script>
+    var vm = new Vue({
+        el: '#app',
+        data: {
+            p1: 'Don`t be encumbered by history.',
+            p2: 'Go for it !',
+            sump: '',
+            s1:5,
+            s2:3,
+            sums:0
+        },
+        methods: {
+            add: function () {
+                this.sump = this.p1 + this.p2;
+                return this.sump;
+            },
+            remove:function () {
+                this.sums = this.s1 - this.s2;
+                return this.sums;
+            }
+        }
+    });
+</script>
