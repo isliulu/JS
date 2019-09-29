@@ -2,6 +2,19 @@
  * created by Administrator on 2019-3-21
  */
 
+//Object.defineProperty() 是 ES5 中的新对象方法,允许定义对象属性和/或更改属性的值和/或元数据。
+
+//writable : true      // 属性值可修改
+// enumerable : true    // 属性可枚举
+// configurable : true  // 属性可重新配置
+// writable : false     // 属性值不可修改
+// enumerable : false   // 属性不可枚举
+// configurable : false // 属性不可重新配置
+
+//// 定义 getter
+// get: function() { return language }
+// // 定义 setter
+// set: function(value) { language = value }
 
 // var person = {
 //     age: '18',

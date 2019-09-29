@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.staticfile.org/jquery/2.0.0/jquery.min.js"></script>
+</head>
+<body>
+<input type="checkbox" name="checkInout">
+<button onclick="check()">选中</button>
+<button onclick="remove()">取消</button>
+</body>
+</html>
+<script>
+    var enable = 1;
+if(enable===1){
+    $("input[name='checkInout']").prop('checked', true);
+}
+    // alert($("input[name='checkInout']").prop('checked'));
+
+    function check() {
+        // $("input[name='checkInout']").prop('checked', true);
+    }
+
+    function remove() {
+        // $("input[name='checkInout']").prop('checked', false);
+    }
+</script>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="date" id="date">
+<br>
+<input type="time" id="time">
+
+<input type="checkbox" id="checkInput">
+<button onclick="submit()">提交</button>
+</body>
+</html>
+<script>
+    function submit(){
+        var date=document.getElementById('date');
+        var time=document.getElementById('time');
+        var timeData = '23:02:00';
+        console.log(timeData.lastIndexOf(':'));
+        time.value=timeData.slice(0,5);
+        console.log(time.value,'last time');
+
+        var check=document.getElementById('checkInput');
+        console.log(check.value);
+        // console.log(document.getElementById('#time').value);
+    }
+
+</script>

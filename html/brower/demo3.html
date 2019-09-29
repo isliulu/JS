@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<button onclick="open()">打开新窗口</button>
+<button onclick="close()">关闭当前窗口</button>
+<button onclick="move()">移动当前窗口</button>
+<button onclick="resize()">重新调整当前窗口</button>
+</body>
+</html>
+<script>
+    function open() {
+        window.open();
+    }
+
+    function close() {
+        window.close();
+    }
+
+    function move() {
+        window.moveTo();
+    }
+
+    function resize() {
+        window.resizeTo();
+    }
+</script>

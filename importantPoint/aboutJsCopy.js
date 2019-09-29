@@ -1,0 +1,51 @@
+/**
+ * created by Administrator on 2019-9-12
+ */
+
+//关于js的赋值
+//传值赋值
+
+
+var a =1;
+var b= a;
+
+a= 3;
+
+console.log(a);  //3
+console.log(b);  //1   //a的改变不会影响到b
+
+//引用赋值
+
+var arr1 = [1,2,3,4];
+
+var arr2 = arr1;
+
+arr1.push(6);
+
+console.log(arr1); //[ 1, 2, 3, 4, 6 ]
+console.log(arr2); //[ 1, 2, 3, 4, 6 ]  //这样arr1会影响到arr2的
+
+//js的数据类型：
+//基本数据类型：undefined null boolean number string symbol
+//引用数据类型：object function array
+
+var obj1= {
+    name:'liulu',
+};
+
+var obj2 = obj1;
+
+var obj3 = {};
+
+Object.assign(obj3,obj1);
+
+obj1.name = 'leeyowon';
+
+console.log(obj1); //{ name: 'leeyowon' }
+console.log(obj2); //{ name: 'leeyowon' } //被影响
+console.log(obj3); //{ name: 'liulu' } //不被影响
+
+
+
+
+

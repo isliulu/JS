@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <title></title>
+</head>
+<body>
+<input type="file" id="addr" name="addr" value="" placeholder="" onchange="playVideo(this.value)">
+<div id="vlcArea" style="margin-top:20px">
+    <object type='application/x-vlc-plugin' id='vlc' events='True' width="720" height="540" pluginspage="http://www.videolan.org" codebase="http://downloads.videolan.org/pub/videolan/vlc-webplugins/2.0.6/npapi-vlc-2.0.6.tar.xz">
+        <param name='mrl' value='rtsp://172.16.26.205/20190515B1_H' />
+        <param name='volume' value='50' />
+        <param name='autoplay' value='true' />
+        <param name='loop' value='false' />
+        <param name='fullscreen' value='false' />
+    </object>
+    <script>
+        function playVideo(value){
+            var vlc=document.getElementById("vlc");
+            var itemId= vlc.playlist.add("file:///"+value);//这里的路径可以是http://XXXXXX/XXXX/XXX.MOV之类的
+            vlc.playlist.playItem(itemId);
+        }
+    </script>
+</div>
+</body>
+</html>

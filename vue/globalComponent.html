@@ -15,6 +15,7 @@
                  :title="item">
         </do-item>
     </ul>
+    <button @click = "go()">跳转</button>
 </div>
 </body>
 <script>
@@ -33,6 +34,9 @@
             addVal: function () {
                 this.list.push(this.inputVal);
                 this.inputVal = '';
+            },
+            go:function () {
+                this.$router.push('http:baidu.com');
             }
         }
     })

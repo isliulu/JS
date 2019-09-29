@@ -1,0 +1,45 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <script>
+    </script>
+</head>
+
+<body>
+<input type="text" name="url" value="" size="600"/>
+<input type="button" name="播放" value="播放" onclick="play()"/>
+<input type="button" name="停止" value="停止" onclick="stop()"/>
+<div>
+    <OBJECT classid="clsid:9BE31822-FDAD-461B-AD51-BE1D1C159921" id="vlc" codebase="" width="600" height="480" id="vlc" events="True">
+        <param name="MRL" value="" />
+        <param name="Src" value="" />
+        <param name="AutoLoop" value="False" />
+        <param name="AutoPlay" value="False" />
+        <param name="Time" value="True" />
+        <param name="ShowDisplay" value="True" />
+        <param name="Controls" value="False">
+        <EMBED pluginspage="http://www.videolan.org" type="application/x-vlc-plugin" version="VideoLAN.VLCPlugin.2" width="600" height="480" text="Waiting for video" name="vlc"></EMBED>
+    </OBJECT>
+</div>
+</body>
+<script type="text/javascript" >
+    function play()
+    {
+        var vlc = document.getElementById("vlc");
+        var rtspUrl=document.getElementById("url").value;
+        var options = new Array(":aspect-ratio=4:3", "--rtsp-tcp");
+        var id = vlc.playlist.add(rtspUrl, "fancy name", options);
+        vlc.playlist.playItem(id);
+        vlc.playlist.play();
+    }
+    function stop()
+    {
+        var vlc = document.getElementById("vlc");
+        vlc.playlist.stop();
+    }
+</script>
+
+</html>
